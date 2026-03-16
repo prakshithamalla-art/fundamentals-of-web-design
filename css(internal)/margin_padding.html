@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Margin vs Padding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* Margin Examples */
+        .margin-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .margin-box {
+            background-color: #ff9999;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .margin-box.m-10 { margin: 10px; }
+        .margin-box.m-20 { margin: 20px; }
+        .margin-box.m-30 { margin: 30px; }
+        .margin-box.m-50 { margin: 50px; }
+        
+        .margin-individual {
+            background-color: #66cc99;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .margin-individual.mt-30 { margin-top: 30px; }
+        .margin-individual.mr-50 { margin-right: 50px; }
+        .margin-individual.mb-30 { margin-bottom: 30px; }
+        .margin-individual.ml-50 { margin-left: 50px; }
+        
+        /* Padding Examples */
+        .padding-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .padding-box {
+            background-color: #6699ff;
+            color: white;
+            border: 2px solid #333;
+            width: 200px;
+            text-align: center;
+        }
+        
+        .padding-box.p-10 { padding: 10px; }
+        .padding-box.p-20 { padding: 20px; }
+        .padding-box.p-30 { padding: 30px; }
+        .padding-box.p-50 { padding: 50px; }
+        
+        .padding-individual {
+            background-color: #ff9933;
+            color: white;
+            border: 2px solid #333;
+        }
+        
+        .padding-individual.pt-30 { padding-top: 30px; }
+        .padding-individual.pr-50 { padding-right: 50px; }
+        .padding-individual.pb-30 { padding-bottom: 30px; }
+        .padding-individual.pl-50 { padding-left: 50px; }
+        
+        /* Comparison */
+        .comparison-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-container {
+            display: flex;
+            gap: 50px;
+            margin: 30px 0;
+        }
+        
+        .comparison-box {
+            flex: 1;
+        }
+        
+        .box-content {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .margin-demo .box-content {
+            margin: 30px;
+            padding: 20px;
+        }
+        
+        .padding-demo .box-content {
+            margin: 20px;
+            padding: 30px;
+        }
+        
+        .demo-explanation {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Margin vs Padding Demonstration</h1>
+    
+    <div class="container">
+        <!-- Margin Examples -->
+        <div class="margin-section">
+            <h2>📏 MARGIN - Space OUTSIDE the border</h2>
+            <p style="margin-bottom: 20px;">Margin creates space between elements. Background color does NOT extend into margin.</p>
+            
+            <div style="background: #eee; padding: 10px;">
+                <div class="margin-box m-10">Margin: 10px (all sides)</div>
+                <div class="margin-box m-20">Margin: 20px (all sides)</div>
+                <div class="margin-box m-30">Margin: 30px (all sides)</div>
+                <div class="margin-box m-50">Margin: 50px (all sides)</div>
+            </div>
+            
+            <h3 style="margin: 30px 0 10px;">Individual Margin Properties</h3>
+            <div style="background: #eee; padding: 10px;">
+                <div class="margin-individual mt-30">margin-top: 30px</div>
+                <div class="margin-individual mr-50">margin-right: 50px (look right)</div>
+                <div class="margin-individual mb-30">margin-bottom: 30px</div>
+                <div class="margin-individual ml-50">margin-left: 50px</div>
+            </div>
+        </div>
+        
+        <!-- Padding Examples -->
+        <div class="padding-section">
+            <h2>📦 PADDING - Space INSIDE the border</h2>
+            <p style="margin-bottom: 20px;">Padding creates space between content and border. Background color extends into padding.</p>
+            
+            <div style="background: #eee; padding: 10px;">
+                <div class="padding-box p-10">Padding: 10px (all sides)</div>
+                <div class="padding-box p-20">Padding: 20px (all sides)</div>
+                <div class="padding-box p-30">Padding: 30px (all sides)</div>
+                <div class="padding-box p-50">Padding: 50px (all sides)</div>
+            </div>
+            
+            <h3 style="margin: 30px 0 10px;">Individual Padding Properties</h3>
+            <div style="background: #eee; padding: 10px;">
+                <div class="padding-individual pt-30">padding-top: 30px</div>
+                <div class="padding-individual pr-50">padding-right: 50px</div>
+                <div class="padding-individual pb-30">padding-bottom: 30px</div>
+                <div class="padding-individual pl-50">padding-left: 50px</div>
+            </div>
+        </div>
+        
+        <!-- Comparison -->
+        <div class="comparison-section">
+            <h2>🔍 Side-by-Side Comparison</h2>
+            
+            <div class="comparison-container">
+                <div class="comparison-box margin-demo">
+                    <h3 style="color: #ff6b6b;">MARGIN</h3>
+                    <div style="background: #ffcccc; padding: 20px;">
+                        <div class="box-content">Content Box</div>
+                        <p style="margin-top: 10px;">Red area shows margin space</p>
+                    </div>
+                    <p><b>CSS:</b> margin: 30px;</p>
+                </div>
+                
+                <div class="comparison-box padding-demo">
+                    <h3 style="color: #4ecdc4;">PADDING</h3>
+                    <div style="background: #ccf0e8; padding: 20px;">
+                        <div class="box-content">Content Box</div>
+                        <p style="margin-top: 10px;">Green area shows padding space</p>
+                    </div>
+                    <p><b>CSS:</b> padding: 30px;</p>
+                </div>
+            </div>
+            
+            <div class="demo-explanation">
+                <h3>Key Differences:</h3>
+                <ul style="margin-left: 20px;">
+                    <li><b>Margin</b> is OUTSIDE the border - creates space BETWEEN elements</li>
+                    <li><b>Padding</b> is INSIDE the border - creates space AROUND content</li>
+                    <li>Background color affects padding but NOT margin</li>
+                    <li>Margin can have negative values, padding cannot</li>
+                    <li>Margin collapses (adjacent margins combine), padding does not</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

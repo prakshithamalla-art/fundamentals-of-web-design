@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Loops</title>
+</head>
+<body>
+    <h2>JavaScript Loops</h2>
+    
+    <script>
+        document.write("<h3>For Loop:</h3>");
+        for (let i = 0; i < 5; i++) {
+            document.write("Iteration " + i + "<br>");
+        }
+        
+        document.write("<h3>For Loop with Array:</h3>");
+        let cars = ["BMW", "Volvo", "Saab", "Ford"];
+        for (let i = 0; i < cars.length; i++) {
+            document.write(cars[i] + "<br>");
+        }
+        
+        document.write("<h3>For-In Loop (Object):</h3>");
+        let person = {fname: "John", lname: "Doe", age: 25};
+        for (let x in person) {
+            document.write(x + ": " + person[x] + "<br>");
+        }
+        
+        document.write("<h3>While Loop:</h3>");
+        let i = 0;
+        while (i < 3) {
+            document.write("While iteration " + i + "<br>");
+            i++;
+        }
+        
+        document.write("<h3>Do-While Loop:</h3>");
+        let j = 0;
+        do {
+            document.write("Do-While iteration " + j + "<br>");
+            j++;
+        } while (j < 3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage</title>
+</head>
+<body>
+    <h2>Local Storage Example</h2>
+    <p>Data persists even after browser is closed</p>
+    
+    <input type="text" id="dataInput" placeholder="Enter data to store">
+    <button onclick="saveToLocal()">Save to Local Storage</button>
+    <button onclick="loadFromLocal()">Load from Local Storage</button>
+    <button onclick="removeFromLocal()">Remove from Local Storage</button>
+    <button onclick="clearLocal()">Clear All Local Storage</button>
+    
+    <div id="localOutput" style="margin-top: 20px; padding: 10px; background-color: #f0f0f0;"></div>
+    
+    <script>
+        function saveToLocal() {
+            let data = document.getElementById("dataInput").value;
+            localStorage.setItem("myData", data);
+            document.getElementById("localOutput").innerHTML = 
+                "Data saved: " + data;
+        }
+        
+        function loadFromLocal() {
+            let data = localStorage.getItem("myData");
+            if(data) {
+                document.getElementById("localOutput").innerHTML = 
+                    "Data loaded: " + data;
+            } else {
+                document.getElementById("localOutput").innerHTML = 
+                    "No data found in local storage";
+            }
+        }
+        
+        function removeFromLocal() {
+            localStorage.removeItem("myData");
+            document.getElementById("localOutput").innerHTML = 
+                "Data removed from local storage";
+        }
+        
+        function clearLocal() {
+            localStorage.clear();
+            document.getElementById("localOutput").innerHTML = 
+                "All local storage cleared";
+        }
+        
+        // Store objects
+        let user = {
+            name: "John Doe",
+            age: 30,
+            email: "john@example.com"
+        };
+        
+        localStorage.setItem("user", JSON.stringify(user));
+        
+        // Load object
+        let loadedUser = JSON.parse(localStorage.getItem("user"));
+        console.log("Loaded user:", loadedUser);
+    </script>
+</body>
+</html>

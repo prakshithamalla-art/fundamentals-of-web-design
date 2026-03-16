@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="https://via.placeholder.com/150" alt="Profile" class="profile-img" id="profileImg">
+            <h1 id="name">John Doe</h1>
+            <p class="title" id="title">Web Developer & Designer</p>
+            <button class="theme-btn" onclick="app.toggleTheme()">Toggle Theme</button>
+        </header>
+        
+        <div class="content">
+            <section class="section" id="aboutSection">
+                <h2>About Me</h2>
+                <p id="aboutText">Hello! I'm a passionate web developer with 5+ years of experience in creating beautiful, responsive websites.</p>
+                <button class="edit-btn" onclick="app.editAbout()">Edit About</button>
+            </section>
+            
+            <section class="section" id="skillsSection">
+                <h2>Skills</h2>
+                <ul class="skills-list" id="skillsList">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                </ul>
+                <button class="add-btn" onclick="app.addSkill()">Add Skill</button>
+            </section>
+            
+            <section class="section" id="projectsSection">
+                <h2>Projects</h2>
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Projects loaded by JavaScript -->
+                </div>
+            </section>
+            
+            <section class="section" id="contactSection">
+                <h2>Contact</h2>
+                <form id="contactForm">
+                    <input type="text" id="contactName" placeholder="Your Name" required>
+                    <input type="email" id="contactEmail" placeholder="Your Email" required>
+                    <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Link to external JavaScript -->
+    <script src="portfolio.js"></script>
+</body>
+</html>

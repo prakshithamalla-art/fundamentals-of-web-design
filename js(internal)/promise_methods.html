@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promise Methods</title>
+</head>
+<body>
+    <h2>Promise Methods - Promise.all, Promise.race</h2>
+    
+    <button onclick="demoPromiseAll()">Promise.all</button>
+    <button onclick="demoPromiseRace()">Promise.race</button>
+    <button onclick="demoPromiseAllSettled()">Promise.allSettled</button>
+    <button onclick="demoPromiseAny()">Promise.any</button>
+    
+    <div id="promiseOutput" style="margin-top: 20px; padding: 20px; background-color: #f0f0f0;"></div>
+    
+    <script>
+        function log(message) {
+            document.getElementById("promiseOutput").innerHTML += message + "<br>";
+        }
+        
+        function clearLog() {
+            document.getElementById("promiseOutput").innerHTML = "";
+        }
+        
+        // Simulate async operations
+        const promise1 = new Promise((resolve) => setTimeout(() => resolve("Promise 1 resolved"), 1000));
+        const promise2 = new Promise((resolve) => setTimeout(() => resolve("Promise 2 resolved"), 2000));
+        const promise3 = new Promise((resolve, reject) => setTimeout(() => reject("Promise 3 rejected"), 1500));
+        const promise4 = new Promise((resolve) => setTimeout(() => resolve("Promise 4 resolved"), 500));
+        
+        async function demoPromiseAll() {
+            clearLog();
+            log("Promise.all - waits for all promises to resolve");
+            log("If any rejects, all reject");
+            log("----------------------------------------");
+            
+            try {
+                let results = await Promise.all([promise1, promise2, promise4]);
+                log("All resolved:");
+                results.forEach(r => log(r));
+            } catch(error) {
+                log("Error: " + error);
+            }
+        }
+        
+        async function demoPromiseRace() {
+            clearLog();
+            log("Promise.race - returns first settled promise");
+            log("----------------------------------------");
+            
+            try {
+                let result = await Promise.race([promise1, promise2, promise3, promise4]);
+                log("First settled: " + result);
+            } catch(error) {
+                log("First settled (rejected): " + error);
+            }
+        }
+        
+        async function demoPromiseAllSettled() {
+            clearLog();
+            log("Promise.allSettled - waits for all to settle");
+            log("----------------------------------------");
+            
+            let results = await Promise.allSettled([promise1, promise2, promise3, promise4]);
+            results.forEach((result, index) => {
+                log(`Promise ${index + 1}: ${result.status} - ${result.value || result.reason}`);
+            });
+        }
+        
+        async function demoPromiseAny() {
+            clearLog();
+            log("Promise.any - returns first fulfilled promise");
+            log("----------------------------------------");
+            
+            try {
+                let result = await Promise.any([promise1, promise2, promise3, promise4]);
+                log("First fulfilled: " + result);
+            } catch(error) {
+                log("All rejected: " + error);
+            }
+        }
+    </script>
+</body>
+</html>

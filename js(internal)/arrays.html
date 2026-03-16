@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Arrays</title>
+</head>
+<body>
+    <h2>JavaScript Arrays</h2>
+    
+    <script>
+        document.write("<h3>Creating Arrays:</h3>");
+        let fruits = ["Apple", "Banana", "Orange"];
+        let numbers = new Array(1, 2, 3, 4, 5);
+        let mixed = ["Hello", 42, true, null, {name: "John"}];
+        
+        document.write("Fruits: " + fruits + "<br>");
+        document.write("Numbers: " + numbers + "<br>");
+        document.write("Mixed Array: " + mixed + "<br><br>");
+        
+        document.write("<h3>Array Properties and Methods:</h3>");
+        document.write("Length of fruits array: " + fruits.length + "<br>");
+        
+        // Accessing Elements
+        document.write("First fruit: " + fruits[0] + "<br>");
+        document.write("Last fruit: " + fruits[fruits.length - 1] + "<br><br>");
+        
+        // Array Methods
+        document.write("<h3>Array Methods:</h3>");
+        
+        // push() - add to end
+        fruits.push("Mango");
+        document.write("After push('Mango'): " + fruits + "<br>");
+        
+        // pop() - remove from end
+        let last = fruits.pop();
+        document.write("After pop() removed " + last + ": " + fruits + "<br>");
+        
+        // unshift() - add to beginning
+        fruits.unshift("Grapes");
+        document.write("After unshift('Grapes'): " + fruits + "<br>");
+        
+        // shift() - remove from beginning
+        let first = fruits.shift();
+        document.write("After shift() removed " + first + ": " + fruits + "<br>");
+        
+        // indexOf()
+        document.write("Index of 'Banana': " + fruits.indexOf("Banana") + "<br>");
+        
+        // includes()
+        document.write("Includes 'Apple': " + fruits.includes("Apple") + "<br>");
+        
+        // join()
+        document.write("Join with - : " + fruits.join(" - ") + "<br>");
+        
+        // reverse()
+        document.write("Reverse: " + fruits.reverse() + "<br>");
+        
+        // sort()
+        document.write("Sort: " + fruits.sort() + "<br>");
+        
+        // concat()
+        let moreFruits = ["Kiwi", "Pineapple"];
+        let allFruits = fruits.concat(moreFruits);
+        document.write("Concatenated: " + allFruits + "<br>");
+        
+        // slice()
+        let sliced = allFruits.slice(1, 3);
+        document.write("Slice(1,3): " + sliced + "<br>");
+        
+        // splice()
+        allFruits.splice(2, 0, "Lemon", "Peach");
+        document.write("After splice insert: " + allFruits + "<br>");
+        
+        // toString()
+        document.write("toString(): " + allFruits.toString() + "<br>");
+    </script>
+</body>
+</html>

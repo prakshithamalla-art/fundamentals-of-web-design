@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three CSS Types</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        /* Internal CSS */
+        body {
+            background-color: #f9f9f9;
+        }
+        
+        h1 {
+            color: navy;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        .internal-style {
+            background-color: lightyellow;
+            padding: 15px;
+            border: 2px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Three Ways to Apply CSS</h1>
+    
+    <!-- Inline CSS -->
+    <h2 style="color: red; border-bottom: 2px solid red;">1. Inline CSS</h2>
+    <p style="color: blue; font-weight: bold; background-color: #e0e0ff; padding: 10px;">
+        This paragraph uses INLINE CSS directly in the style attribute.
+        It has highest priority and overrides other styles.
+    </p>
+    
+    <h2>2. Internal CSS</h2>
+    <div class="internal-style">
+        <p>This content is styled using INTERNAL CSS defined in the style tag in head section.</p>
+        <p>Internal CSS is good for single-page specific styles.</p>
+    </div>
+    
+    <h2>3. External CSS</h2>
+    <div class="external-style">
+        <p>This content would be styled by EXTERNAL CSS from style.css file.</p>
+        <p>External CSS is best for multiple pages and reusability.</p>
+    </div>
+    
+    <h2>Priority Demonstration</h2>
+    <p style="color: red;">This paragraph has inline style (color: red) which will override any other styles.</p>
+</body>
+</html>

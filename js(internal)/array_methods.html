@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Iteration Methods</title>
+</head>
+<body>
+    <h2>Array Iteration Methods (map, filter, reduce)</h2>
+    
+    <script>
+        let numbers = [2, 4, 8, 10, 15, 20];
+        
+        document.write("<h3>Original Array:</h3>");
+        document.write(numbers + "<br><br>");
+        
+        // 1. map() - transforms each element
+        document.write("<h3>1. map() - Add 2 to each number:</h3>");
+        let mapped = numbers.map(num => num + 2);
+        document.write(mapped + "<br>");
+        
+        document.write("<h3>map() - Square each number:</h3>");
+        let squares = numbers.map(num => num * num);
+        document.write(squares + "<br><br>");
+        
+        // 2. filter() - filters elements based on condition
+        document.write("<h3>2. filter() - Numbers less than 10:</h3>");
+        let filtered = numbers.filter(num => num < 10);
+        document.write(filtered + "<br>");
+        
+        document.write("<h3>filter() - Even numbers:</h3>");
+        let evens = numbers.filter(num => num % 2 === 0);
+        document.write(evens + "<br><br>");
+        
+        // 3. reduce() - reduces array to single value
+        document.write("<h3>3. reduce() - Sum of all numbers:</h3>");
+        let sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+        document.write(sum + "<br>");
+        
+        document.write("<h3>reduce() - Product of all numbers:</h3>");
+        let product = numbers.reduce((acc, curr) => acc * curr, 1);
+        document.write(product + "<br><br>");
+        
+        // Practical Example
+        document.write("<h3>Practical Example - Student Data:</h3>");
+        let students = [
+            {name: "John", marks: 85},
+            {name: "Jane", marks: 92},
+            {name: "Bob", marks: 78},
+            {name: "Alice", marks: 95}
+        ];
+        
+        // Get all names
+        let names = students.map(student => student.name);
+        document.write("Student names: " + names.join(", ") + "<br>");
+        
+        // Get students with marks >= 90
+        let topStudents = students.filter(student => student.marks >= 90);
+        document.write("Top students: ");
+        topStudents.forEach(s => document.write(s.name + " "));
+        document.write("<br>");
+        
+        // Calculate average marks
+        let totalMarks = students.reduce((sum, student) => sum + student.marks, 0);
+        let average = totalMarks / students.length;
+        document.write("Average marks: " + average.toFixed(2) + "<br>");
+    </script>
+</body>
+</html>

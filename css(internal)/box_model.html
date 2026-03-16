@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Box Model</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .box-model-demo {
+            width: 300px;
+            background-color: #ff9999;
+            text-align: center;
+            font-weight: bold;
+            margin: 30px auto;
+        }
+        
+        /* Individual layers visualization */
+        .content {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+        }
+        
+        .padding {
+            background-color: #ffeb3b;
+            padding: 30px;
+            border: 5px dashed #f44336;
+        }
+        
+        .border {
+            background-color: #2196F3;
+            padding: 20px;
+            border: 10px solid #9C27B0;
+            margin: 20px;
+        }
+        
+        .margin {
+            background-color: #ff9800;
+            padding: 20px;
+            border: 5px solid #795548;
+            margin: 40px;
+        }
+        
+        /* Explanation cards */
+        .explanation {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .layer {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .layer:last-child {
+            border-bottom: none;
+        }
+        
+        .layer h3 {
+            margin-bottom: 10px;
+        }
+        
+        .content-layer { background-color: #e8f5e8; }
+        .padding-layer { background-color: #fff9e6; }
+        .border-layer { background-color: #e3f2fd; }
+        .margin-layer { background-color: #fff3e0; }
+        
+        /* Practical examples */
+        .practical-example {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .card {
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .card p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Box Model Explained</h1>
+    
+    <div class="explanation">
+        <div class="layer content-layer">
+            <h3>1. Content</h3>
+            <p>This is where your actual content (text, images) appears.</p>
+            <p><b>Properties:</b> width, height</p>
+            <p><b>Example:</b> The text you're reading now is the content.</p>
+        </div>
+        
+        <div class="layer padding-layer">
+            <h3>2. Padding</h3>
+            <p>Space between content and border. Transparent area inside the box.</p>
+            <p><b>Properties:</b> padding, padding-top, padding-right, padding-bottom, padding-left</p>
+            <p><b>Example:</b> padding: 20px; creates space around content.</p>
+        </div>
+        
+        <div class="layer border-layer">
+            <h3>3. Border</h3>
+            <p>A line surrounding the padding and content.</p>
+            <p><b>Properties:</b> border, border-width, border-style, border-color</p>
+            <p><b>Example:</b> border: 2px solid black; creates a visible boundary.</p>
+        </div>
+        
+        <div class="layer margin-layer">
+            <h3>4. Margin</h3>
+            <p>Space outside the border. Creates distance between elements.</p>
+            <p><b>Properties:</b> margin, margin-top, margin-right, margin-bottom, margin-left</p>
+            <p><b>Example:</b> margin: 20px; creates space between this box and others.</p>
+        </div>
+    </div>
+    
+    <h2 style="text-align: center;">Visual Representation</h2>
+    
+    <div class="box-model-demo">
+        <div class="margin">
+            MARGIN (Outer space)
+            <div class="border">
+                BORDER (The edge)
+                <div class="padding">
+                    PADDING (Inner space)
+                    <div class="content">
+                        CONTENT
+                        <br>Your text here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="practical-example">
+        <h2 style="color: #333; margin-bottom: 20px;">Practical Example - Product Card</h2>
+        
+        <div class="card">
+            <h3>Smartphone X</h3>
+            <p><b>Price:</b> $599.99</p>
+            <p><b>Features:</b> 6.5" display, 128GB storage, 48MP camera</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="button">Add to Cart</button>
+        </div>
+        
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 5px; margin-top: 30px;">
+            <h3>CSS Used:</h3>
+            <pre style="background: #333; color: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;">
+.card {
+    margin: 20px;        /* Space outside the card */
+    padding: 20px;        /* Space inside the card */
+    border: 2px solid #3498db;  /* Border around padding */
+    background: white;    /* Content background */
+    border-radius: 8px;   /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Shadow effect */
+}
+
+.button {
+    padding: 10px 20px;   /* Space inside button */
+    margin: 10px 0;       /* Space around button */
+    border: none;         /* Remove default border */
+    background: #3498db;  /* Button color */
+}
+            </pre>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Typography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 40px;
+            color: #333;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        /* Font Family */
+        .font-family-1 { font-family: 'Arial', sans-serif; }
+        .font-family-2 { font-family: 'Georgia', serif; }
+        .font-family-3 { font-family: 'Courier New', monospace; }
+        .font-family-4 { font-family: 'Verdana', sans-serif; }
+        
+        /* Font Size */
+        .font-size-1 { font-size: 12px; }
+        .font-size-2 { font-size: 16px; }
+        .font-size-3 { font-size: 20px; }
+        .font-size-4 { font-size: 24px; }
+        .font-size-5 { font-size: 32px; }
+        
+        /* Font Weight */
+        .fw-lighter { font-weight: lighter; }
+        .fw-normal { font-weight: normal; }
+        .fw-bold { font-weight: bold; }
+        .fw-bolder { font-weight: bolder; }
+        .fw-100 { font-weight: 100; }
+        .fw-300 { font-weight: 300; }
+        .fw-500 { font-weight: 500; }
+        .fw-700 { font-weight: 700; }
+        .fw-900 { font-weight: 900; }
+        
+        /* Font Style */
+        .fs-normal { font-style: normal; }
+        .fs-italic { font-style: italic; }
+        .fs-oblique { font-style: oblique; }
+        
+        /* Text Align */
+        .ta-left { text-align: left; }
+        .ta-center { text-align: center; }
+        .ta-right { text-align: right; }
+        .ta-justify { text-align: justify; }
+        
+        /* Line Height */
+        .lh-1 { line-height: 1; }
+        .lh-15 { line-height: 1.5; }
+        .lh-2 { line-height: 2; }
+        .lh-3 { line-height: 3; }
+        
+        /* Letter Spacing */
+        .ls-normal { letter-spacing: normal; }
+        .ls-1 { letter-spacing: 1px; }
+        .ls-2 { letter-spacing: 2px; }
+        .ls-3 { letter-spacing: 3px; }
+        .ls-5 { letter-spacing: 5px; }
+        .ls-minus { letter-spacing: -1px; }
+        
+        /* Text Transform */
+        .tt-uppercase { text-transform: uppercase; }
+        .tt-lowercase { text-transform: lowercase; }
+        .tt-capitalize { text-transform: capitalize; }
+        .tt-none { text-transform: none; }
+        
+        /* Text Decoration */
+        .td-underline { text-decoration: underline; }
+        .td-overline { text-decoration: overline; }
+        .td-line-through { text-decoration: line-through; }
+        .td-none { text-decoration: none; }
+        
+        /* Word Spacing */
+        .ws-normal { word-spacing: normal; }
+        .ws-5 { word-spacing: 5px; }
+        .ws-10 { word-spacing: 10px; }
+        .ws-20 { word-spacing: 20px; }
+        
+        /* Text Shadow */
+        .ts-simple { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .ts-multiple { text-shadow: 2px 2px 4px #ff0000, -2px -2px 4px #0000ff; }
+        .ts-blur { text-shadow: 0 0 8px #ff00ff; }
+        .ts-3d { text-shadow: 1px 1px 0 #999, 2px 2px 0 #888, 3px 3px 0 #777; }
+        
+        /* White Space */
+        .ws-nowrap { white-space: nowrap; background: #f0f0f0; overflow: auto; }
+        .ws-normal { white-space: normal; }
+        .ws-pre { white-space: pre; background: #f0f0f0; }
+        
+        /* Word Break */
+        .wb-normal { word-break: normal; }
+        .wb-break-all { word-break: break-all; background: #f0f0f0; }
+        .wb-keep-all { word-break: keep-all; }
+        
+        /* Color Examples */
+        .color-named { color: red; }
+        .color-hex { color: #3498db; }
+        .color-rgb { color: rgb(46, 204, 113); }
+        .color-rgba { color: rgba(155, 89, 182, 0.8); }
+        .color-hsl { color: hsl(9, 100%, 64%); }
+        
+        .demo-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Typography - Complete Guide</h1>
+    
+    <!-- Font Family Section -->
+    <div class="section">
+        <h2>1. Font Family</h2>
+        <div class="grid-4">
+            <div class="demo-box font-family-1"><b>Arial:</b> The quick brown fox</div>
+            <div class="demo-box font-family-2"><b>Georgia:</b> The quick brown fox</div>
+            <div class="demo-box font-family-3"><b>Courier New:</b> The quick brown fox</div>
+            <div class="demo-box font-family-4"><b>Verdana:</b> The quick brown fox</div>
+        </div>
+    </div>
+    
+    <!-- Font Size Section -->
+    <div class="section">
+        <h2>2. Font Size</h2>
+        <div class="grid-4">
+            <div class="demo-box font-size-1">12px - Very Small</div>
+            <div class="demo-box font-size-2">16px - Normal</div>
+            <div class="demo-box font-size-3">20px - Large</div>
+            <div class="demo-box font-size-4">24px - Larger</div>
+            <div class="demo-box font-size-5">32px - Very Large</div>
+        </div>
+    </div>
+    
+    <!-- Font Weight Section -->
+    <div class="section">
+        <h2>3. Font Weight</h2>
+        <div class="grid-4">
+            <div class="demo-box fw-100">Weight 100 (Thin)</div>
+            <div class="demo-box fw-300">Weight 300 (Light)</div>
+            <div class="demo-box fw-500">Weight 500 (Normal)</div>
+            <div class="demo-box fw-700">Weight 700 (Bold)</div>
+            <div class="demo-box fw-900">Weight 900 (Extra Bold)</div>
+            <div class="demo-box fw-lighter">Lighter</div>
+            <div class="demo-box fw-normal">Normal</div>
+            <div class="demo-box fw-bold">Bold</div>
+        </div>
+    </div>
+    
+    <!-- Font Style Section -->
+    <div class="section">
+        <h2>4. Font Style</h2>
+        <div class="grid-3">
+            <div class="demo-box fs-normal">Normal Text</div>
+            <div class="demo-box fs-italic">Italic Text</div>
+            <div class="demo-box fs-oblique">Oblique Text</div>
+        </div>
+    </div>
+    
+    <!-- Text Align Section -->
+    <div class="section">
+        <h2>5. Text Align</h2>
+        <div class="demo-box ta-left">Left Aligned Text</div>
+        <div class="demo-box ta-center">Center Aligned Text</div>
+        <div class="demo-box ta-right">Right Aligned Text</div>
+        <div class="demo-box ta-justify">Justified Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    </div>
+    
+    <!-- Line Height Section -->
+    <div class="section">
+        <h2>6. Line Height</h2>
+        <div class="grid-4">
+            <div class="demo-box lh-1">Line height 1<br>Second line</div>
+            <div class="demo-box lh-15">Line height 1.5<br>Second line</div>
+            <div class="demo-box lh-2">Line height 2<br>Second line</div>
+            <div class="demo-box lh-3">Line height 3<br>Second line</div>
+        </div>
+    </div>
+    
+    <!-- Letter Spacing Section -->
+    <div class="section">
+        <h2>7. Letter Spacing</h2>
+        <div class="grid-3">
+            <div class="demo-box ls-normal">Normal spacing</div>
+            <div class="demo-box ls-1">Spacing 1px</div>
+            <div class="demo-box ls-2">Spacing 2px</div>
+            <div class="demo-box ls-3">Spacing 3px</div>
+            <div class="demo-box ls-5">Spacing 5px</div>
+            <div class="demo-box ls-minus">Spacing -1px (condensed)</div>
+        </div>
+    </div>
+    
+    <!-- Text Transform Section -->
+    <div class="section">
+        <h2>8. Text Transform</h2>
+        <div class="grid-4">
+            <div class="demo-box tt-uppercase">uppercase text</div>
+            <div class="demo-box tt-lowercase">LOWERCASE TEXT</div>
+            <div class="demo-box tt-capitalize">capitalize each word</div>
+            <div class="demo-box tt-none">No transformation</div>
+        </div>
+    </div>
+    
+    <!-- Text Decoration Section -->
+    <div class="section">
+        <h2>9. Text Decoration</h2>
+        <div class="grid-4">
+            <div class="demo-box td-underline">Underlined text</div>
+            <div class="demo-box td-overline">Overlined text</div>
+            <div class="demo-box td-line-through">Strikethrough text</div>
+            <div class="demo-box td-none">No decoration</div>
+        </div>
+    </div>
+    
+    <!-- Text Shadow Section -->
+    <div class="section">
+        <h2>10. Text Shadow</h2>
+        <div class="grid-4">
+            <div class="demo-box ts-simple" style="font-size: 24px;">Simple Shadow</div>
+            <div class="demo-box ts-multiple" style="font-size: 24px;">Multiple Shadows</div>
+            <div class="demo-box ts-blur" style="font-size: 24px;">Blur Effect</div>
+            <div class="demo-box ts-3d" style="font-size: 24px;">3D Effect</div>
+        </div>
+    </div>
+    
+    <!-- Color Section -->
+    <div class="section">
+        <h2>11. Text Colors</h2>
+        <div class="grid-4">
+            <div class="demo-box color-named">Named Color (red)</div>
+            <div class="demo-box color-hex">Hex Color (#3498db)</div>
+            <div class="demo-box color-rgb">RGB Color (rgb 46,204,113)</div>
+            <div class="demo-box color-rgba">RGBA Color (with opacity)</div>
+            <div class="demo-box color-hsl">HSL Color</div>
+        </div>
+    </div>
+    
+    <!-- Practical Example -->
+    <div class="section">
+        <h2>12. Practical Example - Article Text</h2>
+        <div style="background: white; padding: 30px; border-radius: 10px;">
+            <h1 style="font-size: 32px; font-weight: bold; text-align: center; color: #2c3e50; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">
+                The Art of Typography
+            </h1>
+            
+            <h2 style="font-size: 24px; color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin: 20px 0;">
+                Why Typography Matters
+            </h2>
+            
+            <p style="font-family: Georgia, serif; font-size: 18px; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 20px;">
+                <span style="font-size: 48px; font-weight: bold; color: #e74c3c; float: left; line-height: 0.8; margin-right: 10px;">T</span>ypography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, line lengths, line-spacing, and letter-spacing, and adjusting the space between pairs of letters.
+            </p>
+            
+            <p style="font-family: 'Courier New', monospace; font-size: 16px; line-height: 1.6; color: #666; background: #f8f8f8; padding: 20px; border-radius: 5px;">
+                <i>"Good typography makes reading effortless and enjoyable. It's not just about making words look pretty, but about enhancing the communication and understanding of the content."</i>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

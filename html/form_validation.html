@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation Patterns</title>
+</head>
+<body>
+    <h2>Form with Validation Patterns</h2>
+    <form onsubmit="alert('Form submitted successfully!'); return false;">
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>Field</th>
+                <th>Input</th>
+                <th>Pattern</th>
+            </tr>
+            
+            <!-- Aadhaar Number (12 digits) -->
+            <tr>
+                <td>Aadhaar Number:</td>
+                <td><input type="text" pattern="[0-9]{12}" placeholder="123456789012" title="Enter 12 digit Aadhaar" required></td>
+                <td>12 digits only</td>
+            </tr>
+            
+            <!-- Mobile Number (10 digits) -->
+            <tr>
+                <td>Mobile Number:</td>
+                <td><input type="text" pattern="[0-9]{10}" placeholder="9876543210" title="Enter 10 digit mobile number" required></td>
+                <td>10 digits</td>
+            </tr>
+            
+            <!-- PIN Code (6 digits) -->
+            <tr>
+                <td>PIN Code:</td>
+                <td><input type="text" pattern="[0-9]{6}" placeholder="500001" title="Enter 6 digit PIN code"></td>
+                <td>6 digits</td>
+            </tr>
+            
+            <!-- Email -->
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" placeholder="name@example.com" required></td>
+                <td>Valid email format</td>
+            </tr>
+            
+            <!-- URL -->
+            <tr>
+                <td>Website:</td>
+                <td><input type="url" placeholder="https://example.com"></td>
+                <td>Valid URL</td>
+            </tr>
+            
+            <!-- Username (alphanumeric, 4-12 chars) -->
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" pattern="[A-Za-z0-9]{4,12}" placeholder="john123" title="4-12 alphanumeric characters"></td>
+                <td>4-12 letters/numbers</td>
+            </tr>
+            
+            <!-- Password (min 8 chars) -->
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" minlength="8" placeholder="min 8 characters" required></td>
+                <td>Min 8 characters</td>
+            </tr>
+            
+            <tr>
+                <td colspan="3" align="center">
+                    <input type="submit" value="Validate & Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling</title>
+    <style>
+        .event-box {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Handling in JavaScript</h2>
+    
+    <h3>1. Click Event</h3>
+    <button onclick="handleClick()">Click Me (onclick)</button>
+    <button id="btn2">Click Me (addEventListener)</button>
+    
+    <h3>2. Mouse Events</h3>
+    <div class="event-box" id="mouseBox">
+        Hover/Move Mouse
+    </div>
+    
+    <h3>3. Input Events</h3>
+    <input type="text" id="textInput" placeholder="Type something">
+    <p id="inputDisplay"></p>
+    
+    <h3>4. Change Event</h3>
+    <select id="selectBox">
+        <option value="">Select an option</option>
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+    </select>
+    <p id="selectDisplay"></p>
+    
+    <h3>5. Form Submit Event</h3>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter name" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="formDisplay"></p>
+    
+    <div id="eventLog" style="margin-top: 20px; padding: 10px; background-color: #f0f0f0;"></div>
+    
+    <script>
+        function log(message) {
+            document.getElementById("eventLog").innerHTML += message + "<br>";
+        }
+        
+        // 1. Click Events
+        function handleClick() {
+            log("Button 1 clicked (onclick attribute)");
+        }
+        
+        document.getElementById("btn2").addEventListener("click", function() {
+            log("Button 2 clicked (addEventListener)");
+        });
+        
+        // 2. Mouse Events
+        let box = document.getElementById("mouseBox");
+        
+        box.addEventListener("mouseenter", function() {
+            this.style.backgroundColor = "#e74c3c";
+            log("Mouse entered box");
+        });
+        
+        box.addEventListener("mouseleave", function() {
+            this.style.backgroundColor = "#3498db";
+            log("Mouse left box");
+        });
+        
+        box.addEventListener("mousemove", function(e) {
+            this.innerHTML = `X: ${e.offsetX}, Y: ${e.offsetY}`;
+        });
+        
+        // 3. Input Events
+        document.getElementById("textInput").addEventListener("input", function() {
+            document.getElementById("inputDisplay").textContent = 
+                "You typed: " + this.value;
+        });
+        
+        // 4. Change Event
+        document.getElementById("selectBox").addEventListener("change", function() {
+            document.getElementById("selectDisplay").textContent = 
+                "Selected: " + this.value;
+        });
+        
+        // 5. Form Submit Event
+        document.getElementById("myForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent page refresh
+            let name = document.getElementById("name").value;
+            document.getElementById("formDisplay").textContent = 
+                "Form submitted for: " + name;
+            log("Form submitted for: " + name);
+        });
+        
+        // 6. Window Events
+        window.addEventListener("load", function() {
+            log("Window loaded");
+        });
+        
+        window.addEventListener("resize", function() {
+            log("Window resized to: " + window.innerWidth + "x" + window.innerHeight);
+        });
+    </script>
+</body>
+</html>

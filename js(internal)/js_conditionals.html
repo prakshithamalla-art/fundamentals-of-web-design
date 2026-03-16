@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Conditionals</title>
+</head>
+<body>
+    <h2>JavaScript Conditional Statements</h2>
+    
+    <script>
+        let age = 20;
+        
+        document.write("<h3>If Statement:</h3>");
+        if (age >= 18) {
+            document.write("You are eligible to vote.<br>");
+        }
+        
+        document.write("<h3>If-Else Statement:</h3>");
+        let marks = 75;
+        if (marks >= 40) {
+            document.write("Result: Pass<br>");
+        } else {
+            document.write("Result: Fail<br>");
+        }
+        
+        document.write("<h3>If-Else If Ladder:</h3>");
+        let grade = 85;
+        if (grade >= 90) {
+            document.write("Grade: A+<br>");
+        } else if (grade >= 80) {
+            document.write("Grade: A<br>");
+        } else if (grade >= 70) {
+            document.write("Grade: B<br>");
+        } else if (grade >= 60) {
+            document.write("Grade: C<br>");
+        } else {
+            document.write("Grade: D<br>");
+        }
+        
+        document.write("<h3>Ternary Operator:</h3>");
+        let result = (age >= 18) ? "Adult" : "Minor";
+        document.write("Status: " + result + "<br>");
+    </script>
+</body>
+</html>

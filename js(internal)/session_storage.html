@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session Storage</title>
+</head>
+<body>
+    <h2>Session Storage Example</h2>
+    <p>Data is cleared when browser/tab is closed</p>
+    
+    <input type="text" id="sessionInput" placeholder="Enter data to store">
+    <button onclick="saveToSession()">Save to Session Storage</button>
+    <button onclick="loadFromSession()">Load from Session Storage</button>
+    <button onclick="removeFromSession()">Remove from Session Storage</button>
+    <button onclick="clearSession()">Clear All Session Storage</button>
+    
+    <div id="sessionOutput" style="margin-top: 20px; padding: 10px; background-color: #f0f0f0;"></div>
+    
+    <script>
+        function saveToSession() {
+            let data = document.getElementById("sessionInput").value;
+            sessionStorage.setItem("sessionData", data);
+            document.getElementById("sessionOutput").innerHTML = 
+                "Data saved to session: " + data;
+        }
+        
+        function loadFromSession() {
+            let data = sessionStorage.getItem("sessionData");
+            if(data) {
+                document.getElementById("sessionOutput").innerHTML = 
+                    "Data loaded from session: " + data;
+            } else {
+                document.getElementById("sessionOutput").innerHTML = 
+                    "No session data found";
+            }
+        }
+        
+        function removeFromSession() {
+            sessionStorage.removeItem("sessionData");
+            document.getElementById("sessionOutput").innerHTML = 
+                "Session data removed";
+        }
+        
+        function clearSession() {
+            sessionStorage.clear();
+            document.getElementById("sessionOutput").innerHTML = 
+                "All session storage cleared";
+        }
+        
+        // Compare localStorage vs sessionStorage
+        console.log("localStorage:", localStorage);
+        console.log("sessionStorage:", sessionStorage);
+    </script>
+</body>
+</html>

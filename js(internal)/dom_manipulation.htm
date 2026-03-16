@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation</title>
+    <style>
+        .demo-box {
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 10px;
+            background-color: #f0f0f0;
+        }
+        .changed-style {
+            background-color: #ff9999;
+            color: blue;
+            font-size: 24px;
+            border: 5px dashed red;
+        }
+    </style>
+</head>
+<body>
+    <h2>DOM Manipulation</h2>
+    
+    <div id="content" class="demo-box">
+        <h3 id="heading">Original Heading</h3>
+        <p id="paragraph">Original paragraph text</p>
+    </div>
+    
+    <h3>Manipulation Buttons:</h3>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeHTML()">Change HTML</button>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="addElement()">Add Element</button>
+    <button onclick="removeElement()">Remove Element</button>
+    <button onclick="toggleClass()">Toggle Class</button>
+    <button onclick="setAttribute()">Set Attribute</button>
+    <button onclick="getAttribute()">Get Attribute</button>
+    
+    <div id="result" style="margin-top: 20px; padding: 10px; background-color: #e0e0e0;"></div>
+    
+    <script>
+        function changeText() {
+            let heading = document.getElementById("heading");
+            heading.textContent = "Text Changed!";
+            document.getElementById("result").innerHTML = "Heading text changed";
+        }
+        
+        function changeHTML() {
+            let paragraph = document.getElementById("paragraph");
+            paragraph.innerHTML = "<b>Bold text</b> and <i>italic text</i>";
+            document.getElementById("result").innerHTML = "Paragraph HTML changed";
+        }
+        
+        function changeStyle() {
+            let content = document.getElementById("content");
+            content.style.backgroundColor = "#3498db";
+            content.style.color = "white";
+            content.style.padding = "30px";
+            content.style.borderRadius = "10px";
+            document.getElementById("result").innerHTML = "Styles applied";
+        }
+        
+        function addElement() {
+            let newPara = document.createElement("p");
+            newPara.textContent = "This is a new paragraph";
+            newPara.style.color = "green";
+            document.getElementById("content").appendChild(newPara);
+            document.getElementById("result").innerHTML = "New element added";
+        }
+        
+        function removeElement() {
+            let heading = document.getElementById("heading");
+            if(heading) {
+                heading.remove();
+                document.getElementById("result").innerHTML = "Heading removed";
+            }
+        }
+        
+        function toggleClass() {
+            let content = document.getElementById("content");
+            content.classList.toggle("changed-style");
+            document.getElementById("result").innerHTML = "Class toggled";
+        }
+        
+        function setAttribute() {
+            let content = document.getElementById("content");
+            content.setAttribute("title", "This is a tooltip");
+            document.getElementById("result").innerHTML = "Title attribute added";
+        }
+        
+        function getAttribute() {
+            let content = document.getElementById("content");
+            let title = content.getAttribute("title");
+            document.getElementById("result").innerHTML = 
+                "Title attribute: " + (title || "No title set");
+        }
+    </script>
+</body>
+</html>

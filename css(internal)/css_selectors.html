@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors</title>
+    <style>
+        /* 1. Universal Selector */
+        * {
+            margin: 5px;
+            box-sizing: border-box;
+        }
+        
+        /* 2. Element/Tag Selector */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        h1 {
+            color: navy;
+            text-align: center;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        /* 3. Class Selector */
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+        
+        .center {
+            text-align: center;
+            color: blue;
+        }
+        
+        .box {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 10px;
+        }
+        
+        /* 4. ID Selector */
+        #main-heading {
+            color: darkred;
+            border-bottom: 3px solid darkred;
+        }
+        
+        #special-paragraph {
+            font-style: italic;
+            font-weight: bold;
+            color: purple;
+        }
+        
+        /* 5. Group Selector */
+        h2, h3, h4 {
+            font-family: 'Courier New', monospace;
+            color: darkgreen;
+        }
+        
+        /* 6. Descendant/Nested Selector */
+        div p {
+            background-color: lightgray;
+            padding: 10px;
+        }
+        
+        .container span {
+            color: red;
+            font-weight: bold;
+        }
+        
+        /* 7. Child Selector */
+        ul > li {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+        
+        /* 8. Attribute Selector */
+        input[type="text"] {
+            border: 2px solid blue;
+            padding: 8px;
+        }
+        
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        a[href^="https"] {
+            color: green;
+        }
+        
+        a[href$=".pdf"] {
+            color: red;
+        }
+        
+        /* 9. Pseudo-class Selector */
+        a:hover {
+            color: orange;
+            font-size: 18px;
+        }
+        
+        button:hover {
+            background-color: darkblue;
+        }
+        
+        li:first-child {
+            font-weight: bold;
+        }
+        
+        li:last-child {
+            font-style: italic;
+        }
+        
+        /* 10. Pseudo-element Selector */
+        p::first-line {
+            font-weight: bold;
+        }
+        
+        p::first-letter {
+            font-size: 24px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">CSS Selectors Demonstration</h1>
+    
+    <h2>Element Selector Example</h2>
+    <p>This paragraph is styled by element selector.</p>
+    
+    <h2>Class Selector Example</h2>
+    <p class="highlight">This paragraph has highlight class.</p>
+    <p class="center">This text is center-aligned by class selector.</p>
+    <div class="box">This div has box class with border, padding, margin.</div>
+    
+    <h2>ID Selector Example</h2>
+    <p id="special-paragraph">This paragraph uses ID selector for special styling.</p>
+    
+    <h2>Group Selector Example</h2>
+    <h3>This h3 uses group selector</h3>
+    <h4>This h4 also uses group selector</h4>
+    
+    <h2>Descendant Selector Example</h2>
+    <div>
+        <p>This paragraph is inside div - styled by descendant selector.</p>
+        <p>Another paragraph inside div.</p>
+    </div>
+    
+    <div class="container">
+        <span>This span is inside container</span>
+    </div>
+    
+    <h2>Child Selector Example</h2>
+    <ul>
+        <li>First item - bold</li>
+        <li>Second item</li>
+        <li>Third item - italic</li>
+    </ul>
+    
+    <h2>Attribute Selector Example</h2>
+    <input type="text" placeholder="Text input">
+    <input type="submit" value="Submit Button">
+    
+    <a href="https://google.com">Secure HTTPS Link</a><br>
+    <a href="document.pdf">PDF Document</a>
+    
+    <h2>Pseudo-class Example</h2>
+    <a href="#">Hover over this link</a><br>
+    <button>Hover over this button</button>
+</body>
+</html>

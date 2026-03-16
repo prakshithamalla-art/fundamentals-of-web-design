@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Selection</title>
+    <style>
+        .box {
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 10px;
+            background-color: #f0f0f0;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>DOM Selection Methods</h2>
+    
+    <div id="container">
+        <p id="paragraph1">This is paragraph 1 with ID</p>
+        <p class="para">This is paragraph with class</p>
+        <p class="para">Another paragraph with class</p>
+        <p>Normal paragraph</p>
+    </div>
+    
+    <h3>Selection Methods:</h3>
+    <button onclick="demoGetElementById()">getElementById</button>
+    <button onclick="demoGetElementsByClassName()">getElementsByClassName</button>
+    <button onclick="demoGetElementsByTagName()">getElementsByTagName</button>
+    <button onclick="demoQuerySelector()">querySelector</button>
+    <button onclick="demoQuerySelectorAll()">querySelectorAll</button>
+    
+    <div id="output"></div>
+    
+    <script>
+        function demoGetElementById() {
+            let element = document.getElementById("paragraph1");
+            document.getElementById("output").innerHTML = 
+                "Found: " + element.innerHTML;
+        }
+        
+        function demoGetElementsByClassName() {
+            let elements = document.getElementsByClassName("para");
+            let text = "";
+            for(let i = 0; i < elements.length; i++) {
+                text += elements[i].innerHTML + "<br>";
+            }
+            document.getElementById("output").innerHTML = 
+                "Found " + elements.length + " elements:<br>" + text;
+        }
+        
+        function demoGetElementsByTagName() {
+            let elements = document.getElementsByTagName("p");
+            document.getElementById("output").innerHTML = 
+                "Total paragraphs: " + elements.length;
+        }
+        
+        function demoQuerySelector() {
+            let element = document.querySelector(".para");
+            document.getElementById("output").innerHTML = 
+                "First element with class 'para': " + element.innerHTML;
+        }
+        
+        function demoQuerySelectorAll() {
+            let elements = document.querySelectorAll(".para");
+            let text = "";
+            elements.forEach(e => text += e.innerHTML + "<br>");
+            document.getElementById("output").innerHTML = 
+                "All elements with class 'para':<br>" + text;
+        }
+    </script>
+</body>
+</html>

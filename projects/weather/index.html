@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ Weather App</h1>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name...">
+            <button id="searchBtn">Search</button>
+            <button id="locationBtn">📍 Use My Location</button>
+        </div>
+        
+        <div class="weather-card" id="weatherCard" style="display: none;">
+            <div class="weather-header">
+                <h2 id="cityName"></h2>
+                <p id="date"></p>
+            </div>
+            
+            <div class="weather-main">
+                <img id="weatherIcon" src="" alt="Weather Icon">
+                <div class="temperature">
+                    <span id="temp"></span>°C
+                </div>
+                <div id="description"></div>
+            </div>
+            
+            <div class="weather-details">
+                <div class="detail">
+                    <span>💧 Humidity</span>
+                    <span id="humidity"></span>
+                </div>
+                <div class="detail">
+                    <span>💨 Wind Speed</span>
+                    <span id="windSpeed"></span>
+                </div>
+                <div class="detail">
+                    <span>🌅 Sunrise</span>
+                    <span id="sunrise"></span>
+                </div>
+                <div class="detail">
+                    <span>🌇 Sunset</span>
+                    <span id="sunset"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="error-message" id="errorMessage" style="display: none;"></div>
+        
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+        
+        <div class="recent-searches" id="recentSearches">
+            <h3>Recent Searches</h3>
+            <div id="recentList"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

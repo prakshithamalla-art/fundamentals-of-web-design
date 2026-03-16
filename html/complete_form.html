@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete HTML Form</title>
+</head>
+<body>
+    <h2 align="center">Comprehensive Registration Form</h2>
+    <form>
+        <table border="0" align="center" cellpadding="10" width="600">
+            <!-- Text Input -->
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" name="fullname" size="30" required></td>
+            </tr>
+            
+            <!-- Email Input -->
+            <tr>
+                <td>Email Address:</td>
+                <td><input type="email" name="email" size="30" required></td>
+            </tr>
+            
+            <!-- Password -->
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password" size="30" required></td>
+            </tr>
+            
+            <!-- Radio Buttons -->
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </td>
+            </tr>
+            
+            <!-- Checkboxes -->
+            <tr>
+                <td>Hobbies:</td>
+                <td>
+                    <input type="checkbox" id="reading" name="hobby1" value="reading">
+                    <label for="reading">Reading</label>
+                    <input type="checkbox" id="music" name="hobby2" value="music">
+                    <label for="music">Music</label>
+                    <input type="checkbox" id="sports" name="hobby3" value="sports">
+                    <label for="sports">Sports</label>
+                    <input type="checkbox" id="travel" name="hobby4" value="travel">
+                    <label for="travel">Travel</label>
+                </td>
+            </tr>
+            
+            <!-- Select Dropdown -->
+            <tr>
+                <td>Country:</td>
+                <td>
+                    <select name="country">
+                        <option value="">Select Country</option>
+                        <option value="india">India</option>
+                        <option value="usa">USA</option>
+                        <option value="uk">UK</option>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <!-- Multiple Select -->
+            <tr>
+                <td>Languages Known:</td>
+                <td>
+                    <select name="languages" multiple size="4">
+                        <option value="english">English</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="tamil">Tamil</option>
+                        <option value="bengali">Bengali</option>
+                    </select>
+                    <br><small>Hold Ctrl to select multiple</small>
+                </td>
+            </tr>
+            
+            <!-- Textarea -->
+            <tr>
+                <td>Address:</td>
+                <td><textarea name="address" rows="4" cols="30" placeholder="Enter your full address"></textarea></td>
+            </tr>
+            
+            <!-- Date -->
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="date" name="dob"></td>
+            </tr>
+            
+            <!-- Color -->
+            <tr>
+                <td>Favorite Color:</td>
+                <td><input type="color" name="favcolor"></td>
+            </tr>
+            
+            <!-- Range -->
+            <tr>
+                <td>Skill Level (1-10):</td>
+                <td><input type="range" name="skill" min="1" max="10"></td>
+            </tr>
+            
+            <!-- File Upload -->
+            <tr>
+                <td>Upload Resume:</td>
+                <td><input type="file" name="resume" accept=".pdf,.doc,.docx"></td>
+            </tr>
+            
+            <!-- Hidden Field -->
+            <tr>
+                <td><input type="hidden" name="formid" value="REG001"></td>
+            </tr>
+            
+            <!-- Buttons -->
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Submit Registration</button>
+                    <button type="reset">Reset Form</button>
+                    <button type="button" onclick="alert('Form Submitted!')">Click Me</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

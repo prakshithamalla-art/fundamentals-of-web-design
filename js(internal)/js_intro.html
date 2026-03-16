@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Basics</title>
+</head>
+<body>
+    <h2>JavaScript Introduction</h2>
+    
+    <!-- 1. Internal JavaScript -->
+    <h3>1. Internal JavaScript</h3>
+    <button onclick="internalFunction()">Click Me</button>
+    
+    <script>
+        function internalFunction() {
+            alert("Internal JavaScript Function Called!");
+        }
+    </script>
+    
+    <!-- 2. JavaScript in Body -->
+    <h3>2. JavaScript in Body</h3>
+    <p id="demo"></p>
+    
+    <script>
+        document.getElementById("demo").innerHTML = "This text is added by JavaScript";
+    </script>
+    
+    <!-- 3. External JavaScript -->
+    <h3>3. External JavaScript</h3>
+    <button onclick="externalFunction()">External JS</button>
+    
+    <script src="script.js"></script>
+    
+    <!-- 4. JavaScript Variables -->
+    <h3>4. JavaScript Variables</h3>
+    <script>
+        var x = 10;
+        let y = 20;
+        const z = 30;
+        
+        let sum = x + y + z;
+        document.write("Sum of variables: " + sum + "<br>");
+        document.write("Variable types: var, let, const<br>");
+    </script>
+</body>
+</html>

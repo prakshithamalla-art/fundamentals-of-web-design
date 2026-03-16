@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <h1>Student Registration</h1>
+            <p class="subtitle">Fill in your details to register</p>
+            
+            <div id="successMessage" class="success-message"></div>
+            <div id="errorMessage" class="error-message"></div>
+            
+            <form id="registrationForm">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName">
+                        <div class="error" id="firstNameError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName">
+                        <div class="error" id="lastNameError"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email">
+                    <div class="error" id="emailError"></div>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password">
+                        <div class="error" id="passwordError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                        <div class="error" id="confirmPasswordError"></div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone">
+                        <div class="error" id="phoneError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dob">Date of Birth *</label>
+                        <input type="date" id="dob" name="dob">
+                        <div class="error" id="dobError"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender *</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="gender" value="male"> Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female"> Female
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="other"> Other
+                        </label>
+                    </div>
+                    <div class="error" id="genderError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="course">Select Course *</label>
+                    <select id="course" name="course">
+                        <option value="">Choose a course</option>
+                        <option value="cse">Computer Science Engineering</option>
+                        <option value="ece">Electronics & Communication</option>
+                        <option value="me">Mechanical Engineering</option>
+                        <option value="ce">Civil Engineering</option>
+                    </select>
+                    <div class="error" id="courseError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interests</label>
+                    <div class="checkbox-group" id="interestsGroup">
+                        <label>
+                            <input type="checkbox" name="interest" value="sports"> Sports
+                        </label>
+                        <label>
+                            <input type="checkbox" name="interest" value="music"> Music
+                        </label>
+                        <label>
+                            <input type="checkbox" name="interest" value="reading"> Reading
+                        </label>
+                        <label>
+                            <input type="checkbox" name="interest" value="coding"> Coding
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms">
+                        I agree to the terms and conditions *
+                    </label>
+                    <div class="error" id="termsError"></div>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit">Register</button>
+                    <button type="reset" id="resetBtn">Reset</button>
+                </div>
+            </form>
+            
+            <div class="registered-users" id="registeredUsers">
+                <h3>Registered Students</h3>
+                <div id="usersList"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="registration.js"></script>
+</body>
+</html>
